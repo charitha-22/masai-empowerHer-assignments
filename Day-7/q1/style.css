@@ -1,0 +1,43 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    width: 600px;
+    height: 300px;
+    padding: 20px;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.box2 {
+    background-color: #ff4500;
+}
+.box3 {
+    background-color: #4169e2;
+}
+.box4 {
+    background-color: #fed700;
+}
+.box5 {
+    background-color: #8a2be1;
+}
+.box6 {
+    background-color: #32cd33;
+}
+.box1 {
+    background-color: #00bffe;
+}
+.box7 {
+    background-color: #ff7f50;
+}
+.box8 {
+    background-color: #20b1aa;
+}
+.box9 {
+    background-color: #800000;
+}
