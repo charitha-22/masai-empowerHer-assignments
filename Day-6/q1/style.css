@@ -1,0 +1,20 @@
+/* Card Container */
+.card {
+    width: 300px;
+    height: 400px;
+    margin: auto;                 
+    padding: 20px;               
+    border: 2px solid black;     
+    border-radius: 10px;          
+    box-shadow: 2px 2px 10px #aaa; 
+    text-align: center;          
+}
+
+/* Profile Image */
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;           
+    display: block;
+    margin: 0 auto;              
+}
