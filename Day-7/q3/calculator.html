@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .title{
+            text-align: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+            color: #008080;
+        }
+        .card-container{
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            grid-template-rows: repeat(4, 1fr); 
+            gap: 5px;
+            padding: 30px;
+            background-color: white; 
+            max-width: 200px;
+            margin: 20px auto;
+            box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+        }
+        .card-container > div {
+            display: flex;
+            align-items: center; 
+            justify-content: center;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: white;
+            box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+        }
+        .card-container > div:nth-child(1){
+            grid-column: span 4;
+        }
+        .card-container > div:nth-child(4n+1):not(:nth-child(1)){
+            background-color: black;
+            color: white;
+        }
+        .card-container > div:nth-child(16){
+            background-color: black;
+            color: white;
+        }
+        .card-container > div:nth-child(14){
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">Masai Calculator</h1>
+    <div class="card-container">
+        <div></div>
+        <div><strong>1</strong></div>
+        <div><strong>2</strong></div>
+        <div><strong>3</strong></div>
+        <div><strong>+</strong></div>
+
+        <div><strong>4</strong></div>
+        <div><strong>5</strong></div>
+        <div><strong>6</strong></div>
+        <div><strong>-</strong></div>
+
+        <div><strong>7</strong></div>
+        <div><strong>8</strong></div>
+        <div><strong>9</strong></div>
+        <div><strong>X</strong></div>
+
+        <div><strong>C</strong></div>
+        <div><strong>0</strong></div>
+        <div><strong>=</strong></div>
+        <div><strong>/</strong></div>
+    </div>
+</body>
+</html>
