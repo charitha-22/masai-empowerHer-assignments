@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul></ul>
+    <button type="button" onClick = 'addNewItem()'>Add Item</button>
+    
+</body>
+<script>
+    const myList = document.querySelector('ul')
+    function addNewItem(){
+        const newEle = document.createElement('li');
+        const count = document.querySelectorAll('li').length+1;
+        newEle.textContent = "List Item " + count
+
+        if(count % 2 === 0){
+            newEle.style.color = "red";
+            newEle.style.fontStyle = 'italic';
+        }else{
+            newEle.style.color = "blue";
+            newEle.style.fontWeight = 'bold';
+        }
+        myList.appendChild(newEle);
+    }
+</script>
+</html>
