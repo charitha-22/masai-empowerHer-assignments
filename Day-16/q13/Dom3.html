@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="color" id="color" placeholder="Enter color name">
+    <input type="text" name="content" id="content" placeholder="Enter Text content">
+    <button type="button" id="change"> Change Background </button>
+    <button type="button" onClick = 'textChange()'> Update Text </button>
+    <div>The sun peeked out for a moment and disappeared again</div>
+</body>
+<script>
+    function isValidColor(color){
+        return CSS.supports('color', color)
+    }
+    document.getElementById('change').addEventListener('click',()=>{
+        userColor = document.getElementById('color').value.trim();
+
+        if(isValidColor(userColor)){
+            document.querySelector('div').style.backgroundColor = userColor;
+        }else{
+            alert('Please enter valid color');
+        }
+        
+    })
+
+    function textChange(){
+        userText = document.getElementById('content').value;
+        console.log(userText)
+        if(userText !== ""){
+            const divContent = document.querySelector('div');
+            divContent.textContent += " " + userText
+        }else{
+            alert("Please enter some text!!...");
+        }
+    }
+
+</script>
+</html>
