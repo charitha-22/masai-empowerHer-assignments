@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" name="task" id="task" placeholder="Enter ToDo task">
+        <button type="button" id="addTask">Add Task</button>
+    </div>
+
+    <div id="listToDo">
+
+    </div>
+</body>
+    <script>
+        let toDoList = [];
+        document.getElementById('addTask').addEventListener('click',()=>{
+            let task = document.getElementById('task').value;
+            if(task === ""){
+                alert('Please enter valid data');
+                return;
+            }
+            toDoList.push({
+                text: task,
+                completed: false
+            })
+            document.getElementById('task').value = ""
+            renderUi();
+        })
+
+            function renderUi(){
+                let dataList = document.getElementById('listToDo');
+                dataList.innerHTML = "";
+
+                let ulEle = document.createElement('ul');
+                
+                toDoList.forEach((task, index) =>{
+                let li = document.createElement('li');
+                li.textContent = task.text;
+                if(task.completed){
+                    li.style.textDecoration = 'line-through'
+                }
+                const delButton = document.createElement('button');
+                delButton.textContent = 'Delete';
+                const compButton = document.createElement('button');
+                compButton.textContent = 'Complete';
+
+                delButton.addEventListener('click',()=>{
+                    deleteTask(index);
+                });
+
+                compButton.addEventListener('click',()=>{
+                    task.completed = !task.completed;
+                    renderUi();
+                });
+
+                li.append(delButton, compButton);
+                // li.appendChild(delButton)
+                //  li.appendChild(compButton)
+                ulEle.appendChild(li);
+                dataList.appendChild(ulEle);
+
+            })
+        }
+
+            function deleteTask(i){
+                toDoList.splice(i,1);
+                renderUi();
+            }
+            // function taskCompleted(i){
+            //     toDoList[i].completed = !toDoList[i].completed;
+            //     renderUi();
+            // }
+
+    </script>
+</html>
