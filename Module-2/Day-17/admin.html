@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin page</title>
+</head>
+<body>
+    <h1>Welcome to Book Management</h1>
+
+    <div>
+        <button onClick="goToHome()">Go to the Home Page</button>
+    </div>
+
+    <div>
+        <h2>Add Book:</h2>
+        <input type="text" name="title" id="title" placeholder="Enter book title">
+        <input type="text" name="author" id="author" placeholder="Enter book author">
+
+        <select name="category" id="category" >
+            <option value="All">ALL</option>
+            <option value="fiction">Fiction</option>
+            <option value="comedy">Comedy</option>
+            <option value="technical">Technical</option>
+        </select>
+        <div>
+            <button onclick="addBook()">Add Book</button>
+        </div>
+    </div>
+</body>
+<script>
+
+    function addBook(){
+        let title = document.getElementById('title').value;
+        let author = document.getElementById('author').value;
+
+        let book = {
+            title,
+            author
+        }
+
+        console.log(book);
+    }
+
+</script>
+</html>
