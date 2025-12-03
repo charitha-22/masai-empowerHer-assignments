@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        .todo-list{
+            border: 1px solid white;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            width: 100%;
+        }
+        .listData{
+            width: 70%;
+        }
+         .button-container{
+            width: 30%;
+        }
+        .status{
+            padding: 8px;
+            border: 1px solid white;
+            color: white;
+            background-color: rgb(76, 76, 231);
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            width: 100px;
+        }
+        .delete{
+            padding: 8px;
+            border: 1px solid white;
+            color: white;
+            background-color: rgb(231, 60, 60);
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            width: 100px;
+        }
+        .Completed{
+             text-decoration: line-through; 
+             color: green;
+        }
+        #todoList{
+            max-width: 700px;
+            margin: auto;
+        }
+        .empty{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>ToDo APP</h1>
+    <ul id="todoList"></ul>
+
+    <p id="emptyMessage" class="empty" style="display: none;">No Todos Available</p>
+
+</body>
+<script src="todos.js"></script>
+</html>
