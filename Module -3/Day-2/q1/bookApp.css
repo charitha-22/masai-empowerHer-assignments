@@ -1,0 +1,81 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f1f3f6;
+  padding: 40px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  background: white;
+  padding: 20px;
+  max-width: 700px;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
+
+input {
+  width: calc(50% - 12px);
+  padding: 10px;
+  margin: 6px;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+}
+
+button {
+  padding: 10px 18px;
+  background: #1466f3;
+  border: none;
+  color: white;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+#bookList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.card {
+  /* width: 30%; */
+  background: white;
+  text-align: center;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+img {
+  width: 100px;
+  height: 150px;
+  /* object-fit: cover; */
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.btnEdit {
+  background: #ff9800;
+  color: white;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 4px;
+}
+
+.btnDel {
+  background: #e63946;
+  color: white;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 4px;
+}
