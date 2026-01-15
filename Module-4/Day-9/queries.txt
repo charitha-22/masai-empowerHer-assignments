@@ -1,0 +1,128 @@
+1. Creation of table
+create table students(id serial primary key, name text, email text, age integer, course text, created_at timestamp);
+
+2. Inserting Data.
+--> INSERT INTO students (name, email, age, course, created_at)
+    VALUES ('John Doe', 'john@example.com', 20, 'Computer Science', NOW());
+
+--> INSERT INTO students (name, email, age, course, created_at)
+    VALUES ('Alice Johnson', 'alice@example.com', 22, 'Physics', NOW());
+
+--> INSERT INTO students (name, email, age, course, created_at)
+    VALUES ('Sarah Connor', 's.connor@sky-net.com', 28, 'Cyber Security', NOW());
+
+--> INSERT INTO students (name, email, age, course, created_at)
+    VALUES ('Peter Parker', 'spidey@dailybugle.com', 19, 'Photography', NOW());
+
+--> INSERT INTO students (name, email, age, course, created_at)
+    VALUES  ('Hermione Granger', 'h.granger@hogwarts.edu', 20, 'History of Magic', NOW());
+
+--> INSERT INTO students (name, email, age, course, created_at)
+    VALUES ('Tony Stark', 'tony@starkindustries.com', 24, 'Mechanical Engineering', NOW());
+
+--> INSERT INTO students (name, email, age, course, created_at)
+    VALUES ('Bruce Wayne', 'bruce@waynecorp.com', 25, 'Business Management', NOW());
+
+--> INSERT INTO students (name, email, age, course, created_at)
+    VALUES ('Diana Prince', 'diana@themyscira.gov', 23, 'Archaeology', NOW());
+
+3. Read Data
+    i.Fetch all students
+        select * from students;
+
+        | id | name             | email                    | age | course                 | created_at                 |
+| -- | ---------------- | ------------------------ | --- | ---------------------- | -------------------------- |
+| 17 | John Doe         | john@example.com         | 20  | Computer Science       | 2026-01-15 20:00:55.294989 |
+| 18 | Alice Johnson    | alice@example.com        | 22  | Physics                | 2026-01-15 20:00:55.294989 |
+| 19 | Sarah Connor     | s.connor@sky-net.com     | 28  | Cyber Security         | 2026-01-15 20:00:55.294989 |
+| 20 | Peter Parker     | spidey@dailybugle.com    | 19  | Photography            | 2026-01-15 20:00:55.294989 |
+| 21 | Hermione Granger | h.granger@hogwarts.edu   | 20  | History of Magic       | 2026-01-15 20:00:55.294989 |
+| 22 | Tony Stark       | tony@starkindustries.com | 24  | Mechanical Engineering | 2026-01-15 20:00:55.294989 |
+| 23 | Bruce Wayne      | bruce@waynecorp.com      | 25  | Business Management    | 2026-01-15 20:00:55.294989 |
+| 24 | Diana Prince     | diana@themyscira.gov     | 23  | Archaeology            | 2026-01-15 20:00:55.294989 |
+    
+    ii.Fetch students older than 20
+        select * from students where age > 20;
+
+| id | name          | email                    | age | course                 | created_at                 |
+| -- | ------------- | ------------------------ | --- | ---------------------- | -------------------------- |
+| 18 | Alice Johnson | alice@example.com        | 22  | Physics                | 2026-01-15 20:00:55.294989 |
+| 19 | Sarah Connor  | s.connor@sky-net.com     | 28  | Cyber Security         | 2026-01-15 20:00:55.294989 |
+| 22 | Tony Stark    | tony@starkindustries.com | 24  | Mechanical Engineering | 2026-01-15 20:00:55.294989 |
+| 23 | Bruce Wayne   | bruce@waynecorp.com      | 25  | Business Management    | 2026-01-15 20:00:55.294989 |
+| 24 | Diana Prince  | diana@themyscira.gov     | 23  | Archaeology            | 2026-01-15 20:00:55.294989 |
+
+    iii.Fetch only name and email columns 
+         select name, email from students;
+
+| name             | email                    |
+| ---------------- | ------------------------ |
+| John Doe         | john@example.com         |
+| Alice Johnson    | alice@example.com        |
+| Sarah Connor     | s.connor@sky-net.com     |
+| Peter Parker     | spidey@dailybugle.com    |
+| Hermione Granger | h.granger@hogwarts.edu   |
+| Tony Stark       | tony@starkindustries.com |
+| Bruce Wayne      | bruce@waynecorp.com      |
+| Diana Prince     | diana@themyscira.gov     |
+
+    iv.etch students enrolled in a specific course
+         select * from students where course = 'History of Magic'; 
+
+| id | name             | email                  | age | course           | created_at                 |
+| -- | ---------------- | ---------------------- | --- | ---------------- | -------------------------- |
+| 21 | Hermione Granger | h.granger@hogwarts.edu | 20  | History of Magic | 2026-01-15 20:00:55.294989 |
+
+4. Update Data
+
+    i. Update the age of one student
+        update students set age=45 where id=24;
+
+| id | name             | email                    | age | course                 | created_at                 |
+| -- | ---------------- | ------------------------ | --- | ---------------------- | -------------------------- |
+| 17 | John Doe         | john@example.com         | 20  | Computer Science       | 2026-01-15 20:00:55.294989 |
+| 18 | Alice Johnson    | alice@example.com        | 22  | Physics                | 2026-01-15 20:00:55.294989 |
+| 19 | Sarah Connor     | s.connor@sky-net.com     | 28  | Cyber Security         | 2026-01-15 20:00:55.294989 |
+| 20 | Peter Parker     | spidey@dailybugle.com    | 19  | Photography            | 2026-01-15 20:00:55.294989 |
+| 21 | Hermione Granger | h.granger@hogwarts.edu   | 20  | History of Magic       | 2026-01-15 20:00:55.294989 |
+| 22 | Tony Stark       | tony@starkindustries.com | 24  | Mechanical Engineering | 2026-01-15 20:00:55.294989 |
+| 23 | Bruce Wayne      | bruce@waynecorp.com      | 25  | Business Management    | 2026-01-15 20:00:55.294989 |
+| 24 | Diana Prince     | diana@themyscira.gov     | 45  | Archaeology            | 2026-01-15 20:00:55.294989 |
+
+    ii. Update the course for all students enrolled in one course
+        update students set course = 'computer data' where course = 'Mechanical Engineering';
+
+| id | name             | email                    | age | course              | created_at                 |
+| -- | ---------------- | ------------------------ | --- | ------------------- | -------------------------- |
+| 17 | John Doe         | john@example.com         | 20  | Computer Science    | 2026-01-15 20:00:55.294989 |
+| 18 | Alice Johnson    | alice@example.com        | 22  | Physics             | 2026-01-15 20:00:55.294989 |
+| 19 | Sarah Connor     | s.connor@sky-net.com     | 28  | Cyber Security      | 2026-01-15 20:00:55.294989 |
+| 20 | Peter Parker     | spidey@dailybugle.com    | 19  | Photography         | 2026-01-15 20:00:55.294989 |
+| 21 | Hermione Granger | h.granger@hogwarts.edu   | 20  | History of Magic    | 2026-01-15 20:00:55.294989 |
+| 23 | Bruce Wayne      | bruce@waynecorp.com      | 25  | Business Management | 2026-01-15 20:00:55.294989 |
+| 24 | Diana Prince     | diana@themyscira.gov     | 45  | Archaeology         | 2026-01-15 20:00:55.294989 |
+| 22 | Tony Stark       | tony@starkindustries.com | 24  | computer data       | 2026-01-15 20:00:55.294989 |
+
+5. Delete Data
+
+    i. Delete one student using id
+        delete from students where id = 21;
+
+| id | name          | email                    | age | course              | created_at                 |
+| -- | ------------- | ------------------------ | --- | ------------------- | -------------------------- |
+| 17 | John Doe      | john@example.com         | 20  | Computer Science    | 2026-01-15 20:00:55.294989 |
+| 18 | Alice Johnson | alice@example.com        | 22  | Physics             | 2026-01-15 20:00:55.294989 |
+| 19 | Sarah Connor  | s.connor@sky-net.com     | 28  | Cyber Security      | 2026-01-15 20:00:55.294989 |
+| 20 | Peter Parker  | spidey@dailybugle.com    | 19  | Photography         | 2026-01-15 20:00:55.294989 |
+| 23 | Bruce Wayne   | bruce@waynecorp.com      | 25  | Business Management | 2026-01-15 20:00:55.294989 |
+| 24 | Diana Prince  | diana@themyscira.gov     | 45  | Archaeology         | 2026-01-15 20:00:55.294989 |
+| 22 | Tony Stark    | tony@starkindustries.com | 24  | computer data       | 2026-01-15 20:00:55.294989 |
+
+    ii. Delete all students below a certain age
+         delete from students where age < 25;
+
+| id | name         | email                | age | course              | created_at                 |
+| -- | ------------ | -------------------- | --- | ------------------- | -------------------------- |
+| 19 | Sarah Connor | s.connor@sky-net.com | 28  | Cyber Security      | 2026-01-15 20:00:55.294989 |
+| 23 | Bruce Wayne  | bruce@waynecorp.com  | 25  | Business Management | 2026-01-15 20:00:55.294989 |
+| 24 | Diana Prince | diana@themyscira.gov | 45  | Archaeology         | 2026-01-15 20:00:55.294989 |
